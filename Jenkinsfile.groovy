@@ -1,5 +1,5 @@
 node{
-     properties([parameters([string(defaultValue: '157.230.49.76', description: 'Give ip to build', name: 'IP', trim: false), string(defaultValue: 'latest', description: 'what version would like to deploy', name: 'Ver', trim: true)])])
+    properties([parameters([string(defaultValue: '157.230.49.76', description: 'Docker Host', name: 'IP', trim: false), string(defaultValue: 'latest', description: 'What version to run', name: 'VER', trim: false), string(defaultValue: '4000', description: 'chose the port', name: 'PORT', trim: false)])])
     stage("Remove Container") {
         try{
             sh "ssh root@${IP} docker rm -f Flaskex"
